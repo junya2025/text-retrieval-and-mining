@@ -1,2 +1,2 @@
 # text-retrieval-and-mining
-updates for group project
+[Course website](https://canvas.uva.nl/courses/46465)
