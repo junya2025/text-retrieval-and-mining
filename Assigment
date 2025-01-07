@@ -1,1 +1,109 @@
+# TODO: Import required libraries
+# Hint: You'll need nltk, pandas, matplotlib, wordcloud, and transformers
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
+# Add more imports here...
 
+# Download required NLTK data
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('averaged_perceptron_tagger')
+
+class DocumentAnalyzer:
+    def __init__(self):
+        """Initialize the DocumentAnalyzer with necessary resources"""
+        # TODO: Initialize stop words and the summarization pipeline
+        self.stop_words = None  # Initialize stopwords
+        self.summarizer = None  # Initialize the summarization pipeline
+
+    def process_dataframe(self, df, text_column):
+        """Process text data from a pandas DataFrame column
+
+        Args:
+            df (pd.DataFrame): Input DataFrame
+            text_column (str): Name of the column containing text data
+
+        Returns:
+            pd.DataFrame: DataFrame with added analysis columns
+        """
+        # TODO: Implement DataFrame processing
+        # 1. Read the 500 BBC news articles into the DataFrame. According to your selection criteria.
+        # 2. Apply text analysis functions to the 'content' column
+        # 3. Add and populate a new column for each of the following results: number of sentences (num_sentences), number of words (num_words),
+        #    average word length (avg_word_length), average sentence length (avg_sentence_length), top 10 most common words (common_words),
+        #    top 5 most common phrases (of lenght 2, i.e., two words),
+        #    Note: you have to make these calculations for each of the 500 news articles. Only use the 'content' column.
+        # 4. Handle errors appropriately
+        pass
+
+    def basic_stats(self, text):
+        """Calculate basic text statistics"""
+        # TODO: Calculate and return a dictionary containing:
+        # - Number of sentences (num_sentences)
+        # - Number of words (num_words)
+        # - Average word length (avg_word_length)
+        # - Average sentence length (avg_sentence_length)
+        pass
+
+    def get_common_words(self, text, n=10):
+        """Find the n most common words in the text"""
+        # TODO: Implement word frequency analysis
+        # Remember to:
+        # 1. Tokenize the text
+        # 2. Convert to lowercase
+        # 3. Remove stopwords
+        # 4. Count frequencies
+        pass
+
+    def get_common_phrases(self, text, n=5, phrase_length=2):
+        """Find the n most common phrases of specified length"""
+        # TODO: Implement phrase frequency analysis using nltk.util.ngrams
+        pass
+
+    def create_wordcloud(self, text):
+        """Generate and save a word cloud visualization"""
+        # TODO: Create and show word cloud visualizations of the most common words for 3 randomly selected news articles.
+        # Use WordCloud class and matplotlib
+        pass
+
+    def generate_summary(self, text, max_length=50, min_length=30):
+        """Generate a summary using the BART model"""
+        # TODO: Implement text summarization
+        # Remember to:
+        # 1. Handle long texts by splitting into chunks
+        # 2. Use the summarization pipeline
+        # 3. Combine summaries if needed
+        pass
+
+    def _split_into_chunks(self, text, max_chunk_size=1000):
+        """Helper method to split text into chunks for summarization"""
+        # TODO: Implement text splitting into chunks
+        # This is needed because the summarizer has a maximum input length
+        pass
+
+    def save_analysis(self, filepath, analysis_results):
+        """Save analysis results to a CSV file"""
+        # TODO: Implement saving dataframe to a CSV file
+        pass
+def main():
+    # TODO: Implement the main function that:
+    # 1. Initializes the analyzer
+    # 2. Populates the DataFrame with 500 BBC news articles
+    # 3. Processes the DataFrame
+    # 4. Generates worldclouds for 5 random summaries
+    # 5. Saves the resulting updated dataframe to CSV
+
+    # Hint: Start by loading your 500 news articles into a dataframe. Make sure to include the code to select those 500 news articles.
+    filepath = #path_to_data_file - Replace with your text file
+    df = pd.DataFrame(pd.read_csv(filepath, sep='	', engine='python'))
+    # TODO: Complete the implementation
+    pass
+
+if __name__ == "__main__":
+    main()
+
+# Testing functions
+def run_tests():
+    # TODO: Implement tests for your functions
+    pass
